@@ -1,0 +1,8 @@
+*.obj
+zbuffer/*
+Debug/*
+*.pdf
+*.docx
+.vs/*
+clean.bat
+zbuffer.VC.db
