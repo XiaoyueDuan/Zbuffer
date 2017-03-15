@@ -2,6 +2,8 @@
 #include "geometryTransfer.h"
 #include "scanlineZbuffer.h"
 
+#include <string> 
+
 int SCREEN_WIDTH = 500;
 int SCREEN_HEIGHT = 500;
 float Ortho = 5;
@@ -53,19 +55,34 @@ void display()
 }
 
 int main(int argc, char *argv[])
-{
-	loadOBJ("../model/obj_ford_sample.obj", orig_vertices, polygons, Ortho);
+{	
+	cout << "Please enter the name of .obj file.";
+	cout << "The program will draw 'obj_ford_sample.obj' if there is no entering."<< endl;
+	cout << "(The default folder is ./model)";
 
-	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-	//glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
-	glutInitWindowSize(SCREEN_WIDTH, SCREEN_HEIGHT);
-	glutInitWindowPosition(100, 100);
-	glutCreateWindow("Z-buffer");
-	
-	glutDisplayFunc(display);
-	glutReshapeFunc(reshape);
-	
-	glutMainLoop();
+	string objname;
+	getline(cin, objname);
+
+	if (objname.empty())
+		objname = "../model/obj_ford_sample.obj";
+	else
+		objname = "../model/"+ objname;
+
+	if (loadOBJ(objname.c_str(), orig_vertices, polygons, Ortho))
+	{
+		glutInit(&argc, argv);
+		glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+		//glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
+		glutInitWindowSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+		glutInitWindowPosition(100, 100);
+		glutCreateWindow("Z-buffer");
+
+		glutDisplayFunc(display);
+		glutReshapeFunc(reshape);
+
+		glutMainLoop();
+	}
+
+	system("PAUSE ");
 	return 0;
 }
