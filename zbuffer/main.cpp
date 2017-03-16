@@ -28,12 +28,8 @@ void reshape(int w, int h)
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluOrtho2D(-Ortho*scale, Ortho*scale, -Ortho, Ortho);
-	////gluPerspective(65.0, (GLfloat)w / (GLfloat)h, 1.0, 20.0);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	//gluLookAt(0, 0, 10, // MODIFY!!!!	(0,0,X)
-	//		  0, 0, 0,	// look at original point
-	//		  0, 1, 0);	// y-coordinate direction
 }
 
 void display()
