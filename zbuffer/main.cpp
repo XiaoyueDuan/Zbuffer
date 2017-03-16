@@ -46,7 +46,6 @@ void display()
 	scanlineProccer scanproc;
 	scanproc.scanlineZbuffer(cpTable, ceTable, SCREEN_WIDTH);
 
-	//glutSwapBuffers();
 	cout << "Finish a frame!" << endl;
 }
 
@@ -68,7 +67,6 @@ int main(int argc, char *argv[])
 	{
 		glutInit(&argc, argv);
 		glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-		//glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
 		glutInitWindowSize(SCREEN_WIDTH, SCREEN_HEIGHT);
 		glutInitWindowPosition(100, 100);
 		glutCreateWindow("Z-buffer");

@@ -66,13 +66,7 @@ bool loadOBJ(
 					plgon.vertices.push_back(input);
 
 				out_polygon.push_back(plgon);
-			}
-			//else if((header[0]!=' ')||(header[0]!='\t'))
-			//{
-			//	cout << "the file format is illegal!" << endl;
-			//	cin.rdbuf(cinbuf);//reset to standard output again
-			//	return false;
-			//}				
+			}			
 		}
 	}
 	cin.rdbuf(cinbuf);//reset to standard output again

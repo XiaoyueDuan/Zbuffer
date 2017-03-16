@@ -9,15 +9,8 @@ void scanlineProccer::scanlineZbuffer(map<int, vector<classifiedPolygon>> &cpTab
 										// the scannning task completes.
 	int high = (--cpTable.end())->first;
 
-	////
-	//map<activatedPolygon, activatedEdge> a;// first is ap, second is ae accordingly!!!!!!!!!!!!!!!!!!!!!! 有没有map以外的配对？
-	////
-
 	vector<activatedPolygon> apTable;
 	vector<activatedEdge> aeTable;
-
-	//glClear(GL_COLOR_BUFFER_BIT);
-	//glEnable(GL_LINE_SMOOTH);
 
 	for (int i = high;	; --i)
 	{
@@ -52,7 +45,7 @@ void scanlineProccer::scanlineZbuffer(map<int, vector<classifiedPolygon>> &cpTab
 			}
 		}		
 
-		// DRAW!!!!!
+		// DRAW
 		drawingFixedY(i, colorsId, apTable, width);
 
 		// activated polygons and edges update
@@ -61,8 +54,6 @@ void scanlineProccer::scanlineZbuffer(map<int, vector<classifiedPolygon>> &cpTab
 		if (i<=low&&apTable.empty())
 			break;
 	}	
-
-
 }
 
 void scanlineProccer::draw(vector<double> &zbuffer, vector<int> &colorsId)
@@ -253,9 +244,6 @@ void scanlineProccer::drawingFixedY
 					modelview, projection, viewport,
 					&ex, &yf, &tmpZ);
 
-				//float sx = float(start) / width;
-				//float ex = float(i - 1) / width;
-				//float yf = float(y) / height;
 				drawLine(vec2(sx, yf), vec2(ex, yf), color);
 
 				start = i;
