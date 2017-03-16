@@ -8,10 +8,11 @@ win7，64bit
 
 C++， Visual Studio 2015
 
-想要下载我代码的小伙伴不用担心，只要是使用VS2015+且为64位系统，就可以直接在VS中选择x64编译生成可执行文件，我已将OpenGL的header,lib和dll库都配好。不过强烈安利使用[该方法(戳这里)](http://www.cs.uregina.ca/Links/class-info/315/WWW/Lab1/GLUT/windows.html)给自己的电脑配环境，这样就不用以后每写一个程序就配一次环境了~
+想要下载我代码的小伙伴不用担心，只要是使用VS2015+且为64位系统，就可以直接在VS中选择x64编译生成可执行文件，我已将OpenGL的header，lib和dll库都配好。不过强烈安利使用[该方法（戳这里）](http://www.cs.uregina.ca/Links/class-info/315/WWW/Lab1/GLUT/windows.html)给自己的电脑配环境，这样就不用以后每写一个程序就配一次环境了~
 
 ### 使用方法
 该程序没有什么酷炫的界面也没有特别的功能，就老老实实地实现了Zbuffer算法。在使用时把想要显示的.obj文件放入model文件夹下，当提示输入文件名称时将相应的文件名输入。如果没有输入（如空格，回车），则打开默认的文件 obj_camper_sample.obj。我在当前model文件夹下有如下三个文件。
+
 model/
 
 &#8195;cubex6.obj
